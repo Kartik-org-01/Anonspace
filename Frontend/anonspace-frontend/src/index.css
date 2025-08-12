@@ -1,0 +1,178 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* Custom animations and styles */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px #6366f1; }
+  to { box-shadow: 0 0 30px #6366f1, 0 0 40px #6366f1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle Color Palette Variables */
+:root {
+  --anon-dark: #1a1d23;        /* Softer dark background */
+  --anon-gray: #2a2d35;        /* Lighter gray */
+  --anon-light: #f8fafc;       /* Light background for inputs */
+  --anon-accent: #6366f1;      /* Softer indigo */
+  --anon-secondary: #06b6d4;   /* Softer cyan */
+  --anon-danger: #ef4444;
+  --anon-warning: #f59e0b;
+  --anon-text: #334155;        /* Dark text for light inputs */
+  --anon-text-light: #64748b;  /* Light text */
+  --anon-border: #e2e8f0;      /* Subtle borders */
+}
+
+/* Custom CSS Classes */
+body {
+  background: linear-gradient(135deg, #1a1d23 0%, #2a2d35 100%);
+  color: #f8fafc;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--anon-accent), var(--anon-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  backdrop-filter: blur(20px);
+  background: rgba(248, 250, 252, 0.08);
+  border: 1px solid rgba(248, 250, 252, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.bg-anon-dark { background-color: var(--anon-dark) !important; }
+.bg-anon-gray { background-color: var(--anon-gray) !important; }
+.bg-anon-light { background-color: var(--anon-light) !important; }
+.bg-anon-accent { background-color: var(--anon-accent) !important; }
+.bg-anon-secondary { background-color: var(--anon-secondary) !important; }
+
+.text-anon-accent { color: var(--anon-accent) !important; }
+.text-anon-secondary { color: var(--anon-secondary) !important; }
+.text-anon-light { color: var(--anon-text-light) !important; }
+
+.border-anon-accent { border-color: var(--anon-accent) !important; }
+.border-anon-light { border-color: var(--anon-border) !important; }
+
+/* Subtle button styles */
+.btn-anon-accent {
+  background: linear-gradient(135deg, var(--anon-accent), var(--anon-secondary));
+  border: none;
+  color: white;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-anon-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-anon-outline {
+  border: 2px solid var(--anon-accent);
+  color: var(--anon-accent);
+  background: rgba(99, 102, 241, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.btn-anon-outline:hover {
+  background: var(--anon-accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Light, subtle input styles */
+.form-control-subtle {
+  background-color: var(--anon-light) !important;
+  border: 2px solid var(--anon-border) !important;
+  color: var(--anon-text) !important;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.form-control-subtle:focus {
+  background-color: white !important;
+  border-color: var(--anon-accent) !important;
+  box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.15) !important;
+  color: var(--anon-text) !important;
+}
+
+.form-control-subtle::placeholder {
+  color: var(--anon-text-light) !important;
+}
+
+/* Modal improvements */
+.modal-content-subtle {
+  background: rgba(248, 250, 252, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--anon-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--anon-accent);
+  border-radius: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.min-h-100vh {
+  min-height: 100vh;
+}
+
+.z-1050 {
+  z-index: 1050;
+}
+
+/* Subtle section backgrounds */
+.section-subtle {
+  background: rgba(248, 250, 252, 0.03);
+}
